@@ -1,0 +1,130 @@
+
+$colorDeFondo: #e1b1bc ;
+$colorComplementario: #9b9b9b;
+
+@mixin mixFlex {
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+body{
+    background-color: $colorDeFondo;
+    box-sizing: border-box;
+   
+
+    .cabezera{
+        background-color: $colorDeFondo;
+        @include mixFlex();
+        flex-direction: column;
+      
+
+        .cabezera-tarjeta{
+            @include mixFlex();
+            flex-direction: row;
+            width: 100%;
+            height: 15rem;    
+            .cabezera-imagen{
+                flex-grow: 1;
+                flex-basis: auto;
+                width: 75%;
+                img{
+                    max-width: 100%;
+                    height: auto;
+                }
+                h1{
+                    position: absolute;
+                    text-align: center;
+                                       
+                }
+            }
+            
+            .cabezera-texto{
+                align-self: center ;
+                font-size: 1rem;
+            }
+        }
+
+        .navegacion{
+         
+
+            ul{
+                @include mixFlex();
+                flex-direction: row;
+                justify-content: space-evenly;
+                li{
+                    background-color: $colorComplementario;
+                    text-align: center;
+                    border-radius: 5px;
+                    width: 9rem;
+                    list-style: none;
+                    border: medium solid black;
+                    
+                }
+            }
+        }
+
+    }
+
+
+    .cuerpo{
+       
+        background-color: $colorDeFondo;
+        
+        section{
+            @include mixFlex();
+            flex-direction: row;
+            width: 100%;
+            justify-content: space-evenly;
+            align-content: center;
+            align-items: baseline;
+            .carta-helado{  
+                width: 30%;
+                height: 20rem;  
+                justify-content: space-evenly;
+                align-items: baseline;
+                align-content: center;
+                background-color: $colorComplementario;
+                border: 2rem solid black;
+                border-radius: 30%;
+                @include mixFlex();
+                flex-direction: column;
+                div{
+                    @include mixFlex();
+                    align-items: center;
+                    justify-content: space-evenly;
+
+                    h2{
+                        position: absolute;
+                        
+                    }
+
+                    img{
+                        border: 1rem solid black;
+                        border-radius: 50%;
+                        max-width: 100%;
+                        height: auto;
+                    }
+    
+                }
+                p{
+                    text-align: center;
+                    width: 80%;
+                    border:medium solid black;
+                    background-color: silver;
+                }
+            }
+
+        }
+
+    }
+
+
+
+    .pie{
+        background-color: black;
+        p{
+            color: azure;
+        }
+    }
+}
